@@ -16,6 +16,7 @@ public class ZipController {
         this.zipService = zipService;
     }
 
+    // 🔴 ENDPOINT REAL (ZIP)
     @PostMapping("/process")
     public ResponseEntity<byte[]> process(@RequestParam("file") MultipartFile file) throws Exception {
 
@@ -24,5 +25,11 @@ public class ZipController {
         return ResponseEntity.ok()
                 .header("Content-Disposition", "attachment; filename=processed.zip")
                 .body(result);
+    }
+
+    // 🧪 ENDPOINT DE PRUEBA (IMPORTANTE PARA DEBUG)
+    @PostMapping("/test")
+    public ResponseEntity<String> test(@RequestParam("file") MultipartFile file) {
+        return ResponseEntity.ok("RECIBIDO: " + file.getOriginalFilename());
     }
 }
