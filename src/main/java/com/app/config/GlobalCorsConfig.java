@@ -14,13 +14,7 @@ public class GlobalCorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        // Permite tu frontend local + producción
-                        .allowedOrigins(
-                                "http://localhost:5500",
-                                "http://127.0.0.1:5500",
-                                "https://tecnoinfosv.com",
-                                  "https://www.tecnoinfosv.com"
-                        )
+                        .allowedOriginPatterns("*")  // 👈 CLAVE
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(false);
