@@ -1,0 +1,3 @@
+com\app\service\ZipService.class
+com\app\controller\ZipController.class
+com\app\App.class

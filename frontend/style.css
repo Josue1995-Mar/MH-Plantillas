@@ -1,0 +1,178 @@
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #0f172a;
+}
+
+.background {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        radial-gradient(circle at top left, #4f46e5, transparent 30%),
+        radial-gradient(circle at bottom right, #06b6d4, transparent 30%),
+        #0f172a;
+
+    filter: blur(40px);
+
+    z-index: 1;
+}
+
+.container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 420px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    color: white;
+
+    box-shadow:
+            0 0 40px rgba(0,0,0,0.4);
+}
+
+.logo {
+
+    margin-bottom: 20px;
+}
+
+.circle {
+
+    width: 80px;
+    height: 80px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 35px;
+
+    box-shadow:
+            0 0 25px rgba(79,70,229,0.7);
+}
+
+h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+    font-weight: 700;
+}
+
+.subtitle {
+
+    font-size: 14px;
+
+    color: #d1d5db;
+
+    margin-bottom: 30px;
+
+    line-height: 1.6;
+}
+
+.upload-box {
+
+    background: rgba(255,255,255,0.08);
+
+    border: 2px dashed rgba(255,255,255,0.2);
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    margin-bottom: 25px;
+}
+
+input[type="file"] {
+
+    width: 100%;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+            0 10px 20px rgba(79,70,229,0.4);
+}
+
+#status {
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #cbd5e1;
+}
+
