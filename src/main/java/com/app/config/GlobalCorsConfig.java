@@ -18,7 +18,8 @@ public class GlobalCorsConfig {
                         .allowedOrigins(
                                 "http://localhost:5500",
                                 "http://127.0.0.1:5500",
-                                "https://mh-plantillas-backend.onrender.com"
+                                "https://tecnoinfosv.com",
+                                  "https://www.tecnoinfosv.com"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
