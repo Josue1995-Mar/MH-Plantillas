@@ -21,7 +21,7 @@ async function upload() {
     try {
 
         const response = await fetch(
-            'https://TU_API.onrender.com/zip/process',
+            'https://mh-plantillas-backend.onrender.com/zip/process',
             {
                 method: 'POST',
                 body: formData
