@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/zip")
+@CrossOrigin(origins = "*")
 public class ZipController {
 
     private final ZipService zipService;
