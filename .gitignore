@@ -1,0 +1,18 @@
+# Maven y Java
+target/
+*.class
+
+# IDE
+.idea/
+.vscode/
+.settings/
+.project
+.classpath
+
+# Temporales y logs
+*.log
+*.tmp
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

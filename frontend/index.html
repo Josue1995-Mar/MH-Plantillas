@@ -1,1 +1,107 @@
-<html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Jasper ZIP Processor</title> <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> </head> <body> <div class="background"></div> <div class="container"> <div class="logo"> <div class="circle"> ⚡ </div> </div> <h1> Jasper ZIP Processor </h1> <p class="subtitle"> Procesa automáticamente tus plantillas JasperReports, actualiza URLs y recompila archivos .jasper </p> <div class="upload-box"> <input type="file" id="file"> </div> <button onclick="upload()"> 🚀 Procesar ZIP </button> <h6>Ronaldo Hernández</h6> <div id="status"></div> </div> <script src="script.js"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasper ZIP Processor</title>
+    <link rel="stylesheet" href="style.css?v=2.1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="logo"><div class="circle">⚡</div></div>
+
+    <h1>Jasper ZIP Processor</h1>
+
+    <p class="subtitle">
+        Procesa tus plantillas JasperReports y recompila los archivos .jasper.
+        Elige qué cambios aplicar.
+    </p>
+
+    <!-- PASO 1: QUÉ HACER -->
+    <div class="step-title"><span>1</span> ¿Qué deseas hacer?</div>
+
+    <div class="modes">
+        <label class="mode">
+            <input type="radio" name="modo" value="auto" checked>
+            <div class="mode-card">
+                <div class="mode-icon">✨</div>
+                <div class="mode-text">
+                    <strong>Automático <span class="tag">Recomendado</span></strong>
+                    <small>Actualiza el QR y detecta cómo viene cada plantilla (dirección unida, separada o solo Dirección) para agregar el Distrito donde corresponde</small>
+                </div>
+            </div>
+        </label>
+
+        <label class="mode">
+            <input type="radio" name="modo" value="qr">
+            <div class="mode-card">
+                <div class="mode-icon">🔗</div>
+                <div class="mode-text">
+                    <strong>Solo actualizar QR</strong>
+                    <small>Cambia la URL del QR a admin.factura.gob.sv y no toca nada más</small>
+                </div>
+            </div>
+        </label>
+
+        <details class="avanzado">
+            <summary>Opciones avanzadas (forzar un caso)</summary>
+
+            <label class="mode">
+                <input type="radio" name="modo" value="completo">
+                <div class="mode-card">
+                    <div class="mode-icon">🧩</div>
+                    <div class="mode-text">
+                        <strong>QR + Emisor y Receptor (dirección unida)</strong>
+                        <small>Solo ordena la dirección unida: complemento, distrito, municipio, departamento</small>
+                    </div>
+                </div>
+            </label>
+
+            <label class="mode">
+                <input type="radio" name="modo" value="separado">
+                <div class="mode-card">
+                    <div class="mode-icon">📐</div>
+                    <div class="mode-text">
+                        <strong>Plantilla emisor y receptor separado</strong>
+                        <small>Dibuja "Distrito:" en emisor y receptor</small>
+                    </div>
+                </div>
+            </label>
+
+            <label class="mode">
+                <input type="radio" name="modo" value="mixto">
+                <div class="mode-card">
+                    <div class="mode-icon">🔀</div>
+                    <div class="mode-text">
+                        <strong>Emisor unido + Receptor separado</strong>
+                        <small>Ordena la dirección del emisor y dibuja "Distrito:" solo en el receptor</small>
+                    </div>
+                </div>
+            </label>
+        </details>
+    </div>
+
+    <!-- PASO 2: ARCHIVO -->
+    <div class="step-title"><span>2</span> Carga el ZIP de plantillas <small class="hint">(uno, o varios para masivo)</small></div>
+
+    <div class="upload-box">
+        <input type="file" id="file" accept=".zip" multiple onchange="mostrarSeleccion()">
+        <div id="seleccion" class="seleccion"></div>
+    </div>
+
+    <button id="btn" onclick="upload()">🚀 Procesar</button>
+
+    <div id="status"></div>
+
+    <h6>Ronaldo Hernández · v2.1</h6>
+</div>
+
+<script src="script.js?v=2.1"></script>
+</body>
+</html>
