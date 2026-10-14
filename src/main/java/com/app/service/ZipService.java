@@ -26,6 +26,20 @@ import java.util.zip.*;
 @Service
 public class ZipService {
 
+    /*
+     * Compilación compatible con iReport 5.6.0 (la versión que se usa en producción).
+     * Se compila con JasperReports 5.6.0 + compilador Eclipse (ecj) generando bytecode
+     * Java 6, así el .jasper abre y hace Preview en iReport sin el error
+     * "ClassNotFoundException: ReportExpressionEvaluationData" (que salía con la 6.x).
+     */
+    static {
+        net.sf.jasperreports.engine.DefaultJasperReportsContext ctx =
+                net.sf.jasperreports.engine.DefaultJasperReportsContext.getInstance();
+        ctx.setProperty("org.eclipse.jdt.core.compiler.source", "1.6");
+        ctx.setProperty("org.eclipse.jdt.core.compiler.compliance", "1.6");
+        ctx.setProperty("org.eclipse.jdt.core.compiler.codegen.targetPlatform", "1.6");
+    }
+
     private static final String OLD_URL = "https://webapp.dtes.mh.gob.sv";
     private static final String NEW_URL = "https://admin.factura.gob.sv";
 

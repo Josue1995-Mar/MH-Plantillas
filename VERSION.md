@@ -1,4 +1,12 @@
-# MH-Plantillas (Jasper ZIP Processor) — versión 2.1
+# MH-Plantillas (Jasper ZIP Processor) — versión 2.2
+
+## Novedades 2.2 — .jasper compatibles con iReport 5.6.0
+- Los .jasper se compilan ahora con **JasperReports 5.6.0** (la misma versión de iReport en producción)
+  usando el compilador Eclipse (ecj) con bytecode Java 6.
+- Corrige el error del Preview en iReport: `ClassNotFoundException: net.sf.jasperreports.compilers.ReportExpressionEvaluationData`
+  (salía porque antes se compilaba con JasperReports 6.21.3).
+- Sin cambios en el procesamiento de las plantillas (.jrxml): QR, distrito, observaciones y masivo siguen igual.
+
 
 ## Novedades 2.1 — Procesamiento masivo
 - En la pantalla se pueden seleccionar **varios ZIP a la vez** (uno por cliente), o subir **un ZIP que

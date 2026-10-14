@@ -16,3 +16,6 @@ target/
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+# Jars de referencia de iReport (no subir)
+lib-ireport/
